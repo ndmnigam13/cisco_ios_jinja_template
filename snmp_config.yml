@@ -1,0 +1,15 @@
+- name: Configure snmp on all cisco ios switches
+  hosts: cisco_ios_sw
+  gather_facts: no
+  vars:
+    switches:
+      - name: "switch1"
+        snmp_community: "public"
+        snmp_location: "Rack 1"
+      - name: "switch2"
+        snmp_community: "public"
+        snmp_location: "Rack 2"
+  tasks:
+    - name: Configure SNMP on Cisco IOS switches
+      ios_config:
+        src: '/home/nigam/ansible_automation/cisco/ios/cisco_ios_router_templates/Jinja_Project/templates/snmp_template.j2'

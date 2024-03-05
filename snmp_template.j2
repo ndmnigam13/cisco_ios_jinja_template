@@ -1,0 +1,4 @@
+{% for i in switches %}
+snmp-server community {{i.snmp_community}} RO
+snmp-server location {{i.snmp_location}}
+{% endfor %}
