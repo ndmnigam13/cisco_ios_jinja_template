@@ -12,4 +12,4 @@
   tasks:
     - name: Configure SNMP on Cisco IOS switches
       ios_config:
-        src: '/home/nigam/ansible_automation/cisco/ios/cisco_ios_router_templates/Jinja_Project/templates/snmp_template.j2'
+        src: './snmp_template.j2'
