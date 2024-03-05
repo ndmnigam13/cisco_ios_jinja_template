@@ -23,3 +23,9 @@
     - name: Diplay SNMP status
       ansible.builtin.debug:
         var: write_output.stdout_lines[0]
+
+    - name: Verify SNMP status after change
+      cisco.ios.ios_command:
+        commands:
+          - show run | s snmp
+      register: SNMP_Result
