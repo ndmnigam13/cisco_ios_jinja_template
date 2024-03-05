@@ -29,3 +29,7 @@
         commands:
           - show run | s snmp
       register: SNMP_Result
+    
+    - name: Display SNMP Configuration after change
+      debug:
+        var: SNMP_Result.stdout_lines
