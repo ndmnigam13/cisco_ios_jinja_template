@@ -13,13 +13,3 @@
     - name: Configure SNMP on Cisco IOS switches
       ios_config:
         src: './snmp_template.j2'
-    
-    - name: Saving Configuration
-      cisco.ios.ios_command:
-        commands:
-          - write memory
-      register: write_output
-
-    - name: Diplay SNMP status
-      ansible.builtin.debug:
-        var: write_output.stdout_lines[0]
